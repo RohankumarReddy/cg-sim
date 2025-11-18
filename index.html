@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CG Visualizer — Insane Mode</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>CG Algorithm Visualizer</h1></header>
+
+  <main class="layout">
+    <aside class="left card">
+      <label>Algorithm</label>
+      <select id="algo">
+        <option value="dda">DDA Line</option>
+        <option value="bresenham">Bresenham Line</option>
+        <option value="circle">Midpoint Circle</option>
+        <option value="bresenham_circle">Bresenham Circle</option>
+      </select>
+
+      <div id="params-dda" class="input-group">
+        <label>Line endpoints (grid units)</label>
+        <input id="x1" type="number" value="0">,
+        <input id="y1" type="number" value="0"> —
+        <input id="x2" type="number" value="10">,
+        <input id="y2" type="number" value="5">
+      </div>
+
+      <div id="params-circle" class="input-group" style="display:none;">
+        <label>Circle center + radius (grid units)</label>
+        <input id="xc" type="number" value="8">,
+        <input id="yc" type="number" value="3"> —
+        <input id="r" type="number" value="6">
+      </div>
+
+      <div class="buttons">
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+        <button id="next">Next</button>
+        <button id="reset">Reset</button>
+        <button id="download">Download PNG</button>
+      </div>
+
+      <label>Speed (ms)</label>
+      <input id="speed" type="range" min="10" max="1000" value="120">
+
+      <label>Zoom</label>
+      <input id="zoom" type="range" min="8" max="80" value="20">
+
+      <div class="row">
+        <label><input id="snap" type="checkbox" checked> Snap to grid</label>
+        <label><input id="showArrows" type="checkbox" checked> Show step arrows</label>
+      </div>
+
+      <div class="row">
+        <label><input id="originToggle" type="checkbox"> Top-left origin (off = center)</label>
+      </div>
+
+      <div class="small">Mouse: <span id="mouseCoords">—</span></div>
+      <div class="small">Slope: <span id="slopeBox">—</span></div>
+    </aside>
+
+    <section class="right">
+      <div class="canvas-wrap card">
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <div class="card info">
+        <h3>Step Info</h3>
+        <div id="infoBox">No algorithm running</div>
+        <table id="stepTable">
+          <thead><tr id="theadRow"></tr></thead>
+          <tbody id="tbodyRows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  
+
+
+  <script src="main.js"></script>
+  <script src="algorithms/dda.js"></script>
+  <script src="algorithms/bresenham.js"></script>
+  <script src="algorithms/circle.js"></script>
+  <script src="algorithms/bresenham_circle.js"></script>
+</body>
+</html>

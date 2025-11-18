@@ -1,0 +1,24 @@
+:root{
+  --bg:#f3f6fb; --card:#fff; --accent:#0b63d6;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:#111}
+header{background:var(--accent);color:#fff;padding:14px 18px}
+header h1{margin:0;font-size:18px}
+.layout{display:flex;gap:18px;padding:18px}
+.left{width:320px}
+.right{flex:1}
+.card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 8px 26px rgba(10,20,40,0.06);margin-bottom:12px}
+.input-group input{width:70px;padding:6px;margin:4px 6px 0 0}
+.buttons{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+.buttons button{padding:8px;background:var(--accent);color:#fff;border:none;border-radius:6px;cursor:pointer}
+.buttons button#download{background:#2e7d32}
+.small{font-size:13px;color:#444;margin-top:6px}
+.canvas-wrap{display:flex;justify-content:center;align-items:center;height:560px;overflow:hidden}
+canvas{background:#fff;border:1px solid #ddd;display:block}
+.info h3{margin:0 0 8px 0}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}
+thead th{background:#f7fbff;padding:6px;border-bottom:1px solid #eee}
+tbody td{padding:6px;border-bottom:1px dashed #eee}
+.row{display:flex;gap:10px;align-items:center;margin-top:8px}
+footer{padding:10px 18px;color:#666}
